@@ -2,6 +2,8 @@
 
 <div align='center'>
 
-![](https://m.media-amazon.com/images/I/71zR9qNbLHL._SY522_.jpg)
+[![](https://m.media-amazon.com/images/I/71zR9qNbLHL._SY522_.jpg)](https://github.com/essentialsofparallelcomputing/EssentialsOfParallelComputing)
 
 </div>
+
+- [EssentialsOfParallelComputing](https://github.com/essentialsofparallelcomputing/EssentialsOfParallelComputing)
