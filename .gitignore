@@ -1,2 +1,10 @@
+*.*
+!*.md
+!*.yml
+!*.c
+!*.cc
+!*.cpp
+!*.h
+!*.hpp
 book*/
 .DS_Store
