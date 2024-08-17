@@ -1,10 +1,7 @@
-*.*
-!*.md
-!*.yml
-!*.c
-!*.cc
-!*.cpp
-!*.h
-!*.hpp
+# How do gitignore work?
+# https://stackoverflow.com/questions/3001888/how-do-gitignore-exclusion-rules-actually-work/3001967#3001967
+# Manual: https://git-scm.com/docs/gitignore/en
+
 book*/
+*.zip
 .DS_Store
