@@ -79,3 +79,10 @@ int main() {
     return 0;
 }
 ```
+
+编译运行
+
+```sh
+gcc -O2 -o gmp_test gmp_test.c -I$HOME/gmp/include -L$HOME/gmp/lib -lgmp
+./gmp_test
+```
