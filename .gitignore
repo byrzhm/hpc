@@ -5,3 +5,4 @@
 book*/
 *.zip
 .DS_Store
+.vscode/
