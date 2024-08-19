@@ -6,13 +6,13 @@ layout: default
 
 > 前情提要:
 >
-> 我们已经在 [gmp](../note/gmp) 中展示了计算 $\pi$ 的方法，接下来我们并不打算更换算法，但是要进一步对程序进行加速
+> 我们已经在 [gmp](../note/gmp) 中展示了计算 $\pi$ 的方法, 接下来我们进一步对程序进行加速
 
 ## Exploit CPU
 
 $$\pi = \sum_{k=0}^{\infty}\left[\frac{1}{16^k}(\frac{4}{8k+1}-\frac{2}{8k+4}-\frac{1}{8k+5}-\frac{1}{8k+6})\right]$$
 
-根据上面的公式，最简单的想法就是使用多线程，每个线程计算各自的分量，最后合并到一起。伪代码如下，详细源代码见[源代码清单](#pi_speedup1)
+根据上面的公式, 最简单的想法就是使用多线程, 每个线程计算各自的分量, 最后合并到一起。伪代码如下, 详细源代码见[源代码清单](#pi_speedup1)
 
 ```cpp
 #pragma omp parallel // spawn threads
@@ -34,7 +34,7 @@ $$\pi = \sum_{k=0}^{\infty}\left[\frac{1}{16^k}(\frac{4}{8k+1}-\frac{2}{8k+4}-\f
 }
 ```
 
-使用 24 个核，2.4GHz 的 Intel CPU 在 linux 上的运行结果如下。
+使用 24 个核, 2.4GHz 的 Intel CPU 在 linux 上的运行结果如下。
 
 | precision | real time | user time | system time |
 |:----------|:----------|:----------|:------------|
@@ -46,15 +46,18 @@ $$\pi = \sum_{k=0}^{\infty}\left[\frac{1}{16^k}(\frac{4}{8k+1}-\frac{2}{8k+4}-\f
 
 ## Exploit GPU
 
+> 难点在于 GPU 不支持可变精度的整型运算
+
 ,,,,,coming soon,,,,,
 
-## 公式推导
+## 公式一览
 
 $$\int_{0}^{1}\frac{1}{1+x^2} = arctan(x)\bigg|_0^1 = \frac{\pi}{4}$$
 
 ## 参考
 
 - [Stephan O'Brien's tutorial about parallel-cpp](https://www.physics.mcgill.ca/~obriens/Tutorials/parallel-cpp/)
+- [Computing Digits of π with CUDA](http://www.karrels.org/pi/)
 - [David H. Bailey, Peter B. Borwein and Simon Plouffe. "On the Rapid Computation of Various Polylogarithmic Constants"](https://www.davidhbailey.com/dhbpapers/digits.pdf)
 - [David H. Bailey, Jonathan M. Borwein, Peter B. Borwein and Simon Plouffe. "The Quest for Pi"](https://www.davidhbailey.com//dhbpapers/pi-quest.pdf)
 
